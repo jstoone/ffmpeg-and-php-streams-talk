@@ -4,6 +4,9 @@
 /public/hot
 /public/storage
 /storage/*.key
+# ignore everythin in outputs except .gitkeep
+/storage/examples/outputs/*
+!/storage/examples/outputs/.gitkeep
 /vendor
 .env
 .env.backup

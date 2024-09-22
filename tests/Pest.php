@@ -15,6 +15,10 @@ pest()->extend(Tests\TestCase::class)
  // ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
     ->in('Feature');
 
+pest()->extend(Tests\TestCase::class)
+    // ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
+    ->in('Unit');
+
 /*
 |--------------------------------------------------------------------------
 | Expectations
@@ -41,7 +45,18 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function something()
+function setupAndRegisterS3StreamWrapper(): void
 {
-    // ..
+    $s3Client = new \Aws\S3\S3Client([
+        'version' => 'latest',
+        'region' => 'us-east-1',
+        'endpoint' => 'http://localhost:9000',
+        'use_path_style_endpoint' => true,
+        'credentials' => [
+            'key' => 'minioadmin',
+            'secret' => 'minioadmin',
+        ],
+    ]);
+
+    $s3Client->registerStreamWrapper();
 }
