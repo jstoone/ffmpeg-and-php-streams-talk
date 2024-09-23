@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Process;
 
 beforeEach(function () {
-    setupAndRegisterS3StreamWrapper();
+    setupS3ClientAndRegisterStreamWrapper();
 });
 
 test('it can apply color filter to video', function () {

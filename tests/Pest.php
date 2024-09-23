@@ -45,7 +45,7 @@ expect()->extend('toBeOne', function () {
 |
 */
 
-function setupAndRegisterS3StreamWrapper(): void
+function setupS3ClientAndRegisterStreamWrapper(): void
 {
     $s3Client = new \Aws\S3\S3Client([
         'version' => 'latest',
