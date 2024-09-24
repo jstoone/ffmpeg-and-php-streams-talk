@@ -63,11 +63,11 @@ test('we can browse, rewind and copy a file', function () {
     );
 
     // REWIND
-     dump(
-        "Rewinding the file handle.",
-        rewind($inputFileHandle),
-        "Handle pointer is back at position: " . ftell($inputFileHandle),
-     );
+//     dump(
+//        "Rewinding the file handle.",
+//        rewind($inputFileHandle),
+//        "Handle pointer is back at position: " . ftell($inputFileHandle),
+//     );
 
     // COPY
     stream_copy_to_stream($inputFileHandle, $outputFileHandle);
