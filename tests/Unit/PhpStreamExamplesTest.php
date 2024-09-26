@@ -182,7 +182,7 @@ test('it can stream a file to s3', function () {
     @mkdir('s3://bucket-of-fun');
 
     $inputFile = storage_path('examples/input.txt');
-    $outputFile = 's3://my-bucket/input.txt';
+    $outputFile = 's3://bucket-of-fun/input.txt';
 
     $inputFileHandle = fopen($inputFile, 'r');
     $outputFileHandle = fopen($outputFile, 'w');
